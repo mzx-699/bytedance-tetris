@@ -1,0 +1,6 @@
+framework module Pods_BytedanceTetris {
+  umbrella header "Pods-BytedanceTetris-umbrella.h"
+
+  export *
+  module * { export * }
+}

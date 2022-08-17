@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "TetrisView.init(frame:):TetrisView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.bounds.size">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TetrisView.layoutSubviews():TetrisView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "COLUMN_COUNT">
+            </PersistentString>
+            <PersistentString
+               value = "self.bounds.size">
+            </PersistentString>
+            <PersistentString
+               value = "ROW_COUNT">
+            </PersistentString>
+            <PersistentString
+               value = "Int(SCREEN_WIDTH) - 2 * SPACE">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TetrisViewManager.blockMoveDown():TetrisViewManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tetrisStatus">
+            </PersistentString>
+            <PersistentString
+               value = "self.currentBlock">
+            </PersistentString>
+            <PersistentString
+               value = "tetrisStatus[currentBlock[i].y + 1][currentBlock[i].x]">
+            </PersistentString>
+            <PersistentString
+               value = "currentBlock[i]">
+            </PersistentString>
+            <PersistentString
+               value = "cellSize">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TetrisViewManager.startGame():TetrisViewManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.currentBlock">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in ViewController.prepareTetrisView():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view.snp.width">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TetrisView.drawblock():TetrisView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.tetrisStatus[i][j]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

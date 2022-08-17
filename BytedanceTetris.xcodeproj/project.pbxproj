@@ -7,15 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36ED84A013189E50686035F1 /* Pods_BytedanceTetris_BytedanceTetrisUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5885AC349B78A6F0CC9F048 /* Pods_BytedanceTetris_BytedanceTetrisUITests.framework */; };
+		730312B928A29ABA00548F2F /* TetrisDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730312B828A29ABA00548F2F /* TetrisDelegate.swift */; };
+		730312BB28A29AEA00548F2F /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730312BA28A29AEA00548F2F /* Common.swift */; };
+		730312BD28A29B1500548F2F /* TetrisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730312BC28A29B1500548F2F /* TetrisView.swift */; };
+		730312BF28A29C3800548F2F /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730312BE28A29C3800548F2F /* Block.swift */; };
+		730312C928A2A37700548F2F /* TetrisViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730312C828A2A37700548F2F /* TetrisViewManager.swift */; };
 		7384E6AC289CB0FD004FD81B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384E6AB289CB0FD004FD81B /* AppDelegate.swift */; };
-		7384E6AE289CB0FD004FD81B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384E6AD289CB0FD004FD81B /* SceneDelegate.swift */; };
 		7384E6B0289CB0FD004FD81B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384E6AF289CB0FD004FD81B /* ViewController.swift */; };
-		7384E6B3289CB0FD004FD81B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7384E6B1289CB0FD004FD81B /* Main.storyboard */; };
 		7384E6B5289CB105004FD81B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7384E6B4289CB105004FD81B /* Assets.xcassets */; };
 		7384E6B8289CB105004FD81B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7384E6B6289CB105004FD81B /* LaunchScreen.storyboard */; };
 		7384E6C3289CB105004FD81B /* BytedanceTetrisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384E6C2289CB105004FD81B /* BytedanceTetrisTests.swift */; };
 		7384E6CD289CB106004FD81B /* BytedanceTetrisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384E6CC289CB106004FD81B /* BytedanceTetrisUITests.swift */; };
 		7384E6CF289CB106004FD81B /* BytedanceTetrisUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384E6CE289CB106004FD81B /* BytedanceTetrisUITestsLaunchTests.swift */; };
+		73AC4A4F28ABE48D00FED02B /* shake.wav in Resources */ = {isa = PBXBuildFile; fileRef = 730312C328A29FF500548F2F /* shake.wav */; };
+		C220314A27AC4C67A8566FCD /* Pods_BytedanceTetrisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB618356E4F971CA76B3642 /* Pods_BytedanceTetrisTests.framework */; };
+		D45BB02154D19637B6F4AC51 /* Pods_BytedanceTetris.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C5E48E3FA8F0C467D55FC9B /* Pods_BytedanceTetris.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,11 +43,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		580BD187DC3A288754166877 /* Pods-BytedanceTetrisTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BytedanceTetrisTests.release.xcconfig"; path = "Target Support Files/Pods-BytedanceTetrisTests/Pods-BytedanceTetrisTests.release.xcconfig"; sourceTree = "<group>"; };
+		5C5E48E3FA8F0C467D55FC9B /* Pods_BytedanceTetris.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BytedanceTetris.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DB618356E4F971CA76B3642 /* Pods_BytedanceTetrisTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BytedanceTetrisTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		730312B828A29ABA00548F2F /* TetrisDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetrisDelegate.swift; sourceTree = "<group>"; };
+		730312BA28A29AEA00548F2F /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		730312BC28A29B1500548F2F /* TetrisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetrisView.swift; sourceTree = "<group>"; };
+		730312BE28A29C3800548F2F /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
+		730312C328A29FF500548F2F /* shake.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shake.wav; sourceTree = "<group>"; };
+		730312C828A2A37700548F2F /* TetrisViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetrisViewManager.swift; sourceTree = "<group>"; };
 		7384E6A8289CB0FD004FD81B /* BytedanceTetris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BytedanceTetris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7384E6AB289CB0FD004FD81B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7384E6AD289CB0FD004FD81B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7384E6AF289CB0FD004FD81B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7384E6B2289CB0FD004FD81B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7384E6B4289CB105004FD81B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7384E6B7289CB105004FD81B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7384E6B9289CB105004FD81B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +63,12 @@
 		7384E6C8289CB105004FD81B /* BytedanceTetrisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BytedanceTetrisUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7384E6CC289CB106004FD81B /* BytedanceTetrisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BytedanceTetrisUITests.swift; sourceTree = "<group>"; };
 		7384E6CE289CB106004FD81B /* BytedanceTetrisUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BytedanceTetrisUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		913FDD01D9B5EDF9B125F6E3 /* Pods-BytedanceTetris-BytedanceTetrisUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BytedanceTetris-BytedanceTetrisUITests.release.xcconfig"; path = "Target Support Files/Pods-BytedanceTetris-BytedanceTetrisUITests/Pods-BytedanceTetris-BytedanceTetrisUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A8818D0F6AF06D933A30C1CF /* Pods-BytedanceTetris-BytedanceTetrisUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BytedanceTetris-BytedanceTetrisUITests.debug.xcconfig"; path = "Target Support Files/Pods-BytedanceTetris-BytedanceTetrisUITests/Pods-BytedanceTetris-BytedanceTetrisUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B2FF69A9A1A479D9D6434B5E /* Pods-BytedanceTetris.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BytedanceTetris.release.xcconfig"; path = "Target Support Files/Pods-BytedanceTetris/Pods-BytedanceTetris.release.xcconfig"; sourceTree = "<group>"; };
+		C460292B9D9D9A436002AB19 /* Pods-BytedanceTetrisTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BytedanceTetrisTests.debug.xcconfig"; path = "Target Support Files/Pods-BytedanceTetrisTests/Pods-BytedanceTetrisTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D5885AC349B78A6F0CC9F048 /* Pods_BytedanceTetris_BytedanceTetrisUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BytedanceTetris_BytedanceTetrisUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D829B5DC468C71AF4A351F18 /* Pods-BytedanceTetris.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BytedanceTetris.debug.xcconfig"; path = "Target Support Files/Pods-BytedanceTetris/Pods-BytedanceTetris.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D45BB02154D19637B6F4AC51 /* Pods_BytedanceTetris.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C220314A27AC4C67A8566FCD /* Pods_BytedanceTetrisTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +92,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36ED84A013189E50686035F1 /* Pods_BytedanceTetris_BytedanceTetrisUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		644A0B1C20655264A432AA26 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C5E48E3FA8F0C467D55FC9B /* Pods_BytedanceTetris.framework */,
+				D5885AC349B78A6F0CC9F048 /* Pods_BytedanceTetris_BytedanceTetrisUITests.framework */,
+				6DB618356E4F971CA76B3642 /* Pods_BytedanceTetrisTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		730312C228A29FEF00548F2F /* sources */ = {
+			isa = PBXGroup;
+			children = (
+				7384E6B4289CB105004FD81B /* Assets.xcassets */,
+				730312C328A29FF500548F2F /* shake.wav */,
+			);
+			path = sources;
+			sourceTree = "<group>";
+		};
 		7384E69F289CB0FD004FD81B = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +125,8 @@
 				7384E6C1289CB105004FD81B /* BytedanceTetrisTests */,
 				7384E6CB289CB106004FD81B /* BytedanceTetrisUITests */,
 				7384E6A9289CB0FD004FD81B /* Products */,
+				882D4FC1F58ABD7766B43782 /* Pods */,
+				644A0B1C20655264A432AA26 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +143,16 @@
 		7384E6AA289CB0FD004FD81B /* BytedanceTetris */ = {
 			isa = PBXGroup;
 			children = (
-				7384E6AB289CB0FD004FD81B /* AppDelegate.swift */,
-				7384E6AD289CB0FD004FD81B /* SceneDelegate.swift */,
-				7384E6AF289CB0FD004FD81B /* ViewController.swift */,
-				7384E6B1289CB0FD004FD81B /* Main.storyboard */,
-				7384E6B4289CB105004FD81B /* Assets.xcassets */,
-				7384E6B6289CB105004FD81B /* LaunchScreen.storyboard */,
 				7384E6B9289CB105004FD81B /* Info.plist */,
+				7384E6B6289CB105004FD81B /* LaunchScreen.storyboard */,
+				730312C228A29FEF00548F2F /* sources */,
+				7384E6AB289CB0FD004FD81B /* AppDelegate.swift */,
+				7384E6AF289CB0FD004FD81B /* ViewController.swift */,
+				730312BC28A29B1500548F2F /* TetrisView.swift */,
+				730312C828A2A37700548F2F /* TetrisViewManager.swift */,
+				730312B828A29ABA00548F2F /* TetrisDelegate.swift */,
+				730312BA28A29AEA00548F2F /* Common.swift */,
+				730312BE28A29C3800548F2F /* Block.swift */,
 			);
 			path = BytedanceTetris;
 			sourceTree = "<group>";
@@ -127,6 +174,19 @@
 			path = BytedanceTetrisUITests;
 			sourceTree = "<group>";
 		};
+		882D4FC1F58ABD7766B43782 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D829B5DC468C71AF4A351F18 /* Pods-BytedanceTetris.debug.xcconfig */,
+				B2FF69A9A1A479D9D6434B5E /* Pods-BytedanceTetris.release.xcconfig */,
+				A8818D0F6AF06D933A30C1CF /* Pods-BytedanceTetris-BytedanceTetrisUITests.debug.xcconfig */,
+				913FDD01D9B5EDF9B125F6E3 /* Pods-BytedanceTetris-BytedanceTetrisUITests.release.xcconfig */,
+				C460292B9D9D9A436002AB19 /* Pods-BytedanceTetrisTests.debug.xcconfig */,
+				580BD187DC3A288754166877 /* Pods-BytedanceTetrisTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +194,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7384E6D2289CB106004FD81B /* Build configuration list for PBXNativeTarget "BytedanceTetris" */;
 			buildPhases = (
+				0F390590D7E50F21B179A838 /* [CP] Check Pods Manifest.lock */,
 				7384E6A4289CB0FD004FD81B /* Sources */,
 				7384E6A5289CB0FD004FD81B /* Frameworks */,
 				7384E6A6289CB0FD004FD81B /* Resources */,
+				91753C6EA50D7EE413C7AE6C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,6 +213,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7384E6D5289CB106004FD81B /* Build configuration list for PBXNativeTarget "BytedanceTetrisTests" */;
 			buildPhases = (
+				D66DD39DC44D7CE25D713A97 /* [CP] Check Pods Manifest.lock */,
 				7384E6BA289CB105004FD81B /* Sources */,
 				7384E6BB289CB105004FD81B /* Frameworks */,
 				7384E6BC289CB105004FD81B /* Resources */,
@@ -169,9 +232,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7384E6D8289CB106004FD81B /* Build configuration list for PBXNativeTarget "BytedanceTetrisUITests" */;
 			buildPhases = (
+				6A047CB7A0A189FF8531967B /* [CP] Check Pods Manifest.lock */,
 				7384E6C4289CB105004FD81B /* Sources */,
 				7384E6C5289CB105004FD81B /* Frameworks */,
 				7384E6C6289CB105004FD81B /* Resources */,
+				9D18B8BAD1802BCE49CD4127 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -231,9 +296,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73AC4A4F28ABE48D00FED02B /* shake.wav in Resources */,
 				7384E6B8289CB105004FD81B /* LaunchScreen.storyboard in Resources */,
 				7384E6B5289CB105004FD81B /* Assets.xcassets in Resources */,
-				7384E6B3289CB0FD004FD81B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,14 +318,121 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0F390590D7E50F21B179A838 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BytedanceTetris-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A047CB7A0A189FF8531967B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BytedanceTetris-BytedanceTetrisUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91753C6EA50D7EE413C7AE6C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BytedanceTetris/Pods-BytedanceTetris-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BytedanceTetris/Pods-BytedanceTetris-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BytedanceTetris/Pods-BytedanceTetris-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D18B8BAD1802BCE49CD4127 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BytedanceTetris-BytedanceTetrisUITests/Pods-BytedanceTetris-BytedanceTetrisUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BytedanceTetris-BytedanceTetrisUITests/Pods-BytedanceTetris-BytedanceTetrisUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BytedanceTetris-BytedanceTetrisUITests/Pods-BytedanceTetris-BytedanceTetrisUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D66DD39DC44D7CE25D713A97 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BytedanceTetrisTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7384E6A4289CB0FD004FD81B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				730312C928A2A37700548F2F /* TetrisViewManager.swift in Sources */,
+				730312BB28A29AEA00548F2F /* Common.swift in Sources */,
 				7384E6B0289CB0FD004FD81B /* ViewController.swift in Sources */,
 				7384E6AC289CB0FD004FD81B /* AppDelegate.swift in Sources */,
-				7384E6AE289CB0FD004FD81B /* SceneDelegate.swift in Sources */,
+				730312BF28A29C3800548F2F /* Block.swift in Sources */,
+				730312B928A29ABA00548F2F /* TetrisDelegate.swift in Sources */,
+				730312BD28A29B1500548F2F /* TetrisView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +469,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7384E6B1289CB0FD004FD81B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7384E6B2289CB0FD004FD81B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7384E6B6289CB105004FD81B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -434,6 +598,7 @@
 		};
 		7384E6D3289CB106004FD81B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D829B5DC468C71AF4A351F18 /* Pods-BytedanceTetris.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -444,7 +609,6 @@
 				INFOPLIST_FILE = BytedanceTetris/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -462,6 +626,7 @@
 		};
 		7384E6D4289CB106004FD81B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2FF69A9A1A479D9D6434B5E /* Pods-BytedanceTetris.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -472,7 +637,6 @@
 				INFOPLIST_FILE = BytedanceTetris/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -490,6 +654,7 @@
 		};
 		7384E6D6289CB106004FD81B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C460292B9D9D9A436002AB19 /* Pods-BytedanceTetrisTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -515,6 +680,7 @@
 		};
 		7384E6D7289CB106004FD81B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 580BD187DC3A288754166877 /* Pods-BytedanceTetrisTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -540,6 +706,7 @@
 		};
 		7384E6D9289CB106004FD81B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8818D0F6AF06D933A30C1CF /* Pods-BytedanceTetris-BytedanceTetrisUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -563,6 +730,7 @@
 		};
 		7384E6DA289CB106004FD81B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 913FDD01D9B5EDF9B125F6E3 /* Pods-BytedanceTetris-BytedanceTetrisUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
