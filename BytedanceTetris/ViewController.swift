@@ -8,6 +8,7 @@
 import UIKit
 import AVFoundation
 import SnapKit
+import SVProgressHUD
 class ViewController: UIViewController {
 
     
@@ -48,40 +49,71 @@ class ViewController: UIViewController {
     lazy var leftBtn: UIButton = {
         let btn = UIButton()
         btn.layer.cornerRadius = 20
-        btn.setTitle("左", for: .normal)
+        btn.setImage(UIImage(named: "left"), for: .normal)
         btn.setTitleColor(.black, for: UIControl.State())
         btn.addTarget(self, action: #selector(leftBtnClick), for: .touchUpInside)
-        btn.backgroundColor = colorRGB(red: 189, green: 214, blue: 255, alpha: 1)
+        //btn.backgroundColor = colorRGB(red: 189, green: 214, blue: 255, alpha: 1)
         return btn
     }()
     
     lazy var rightBtn: UIButton = {
         let btn = UIButton()
         btn.layer.cornerRadius = 20
-        btn.setTitle("右", for: .normal)
+        btn.setImage(UIImage(named: "right"), for: .normal)
         btn.setTitleColor(.black, for: .normal)
         btn.addTarget(self, action: #selector(rightBtnClick), for: .touchUpInside)
-        btn.backgroundColor = colorRGB(red: 189, green: 214, blue: 255, alpha: 1)
+        //btn.backgroundColor = colorRGB(red: 189, green: 214, blue: 255, alpha: 1)
         return btn
     }()
     
     lazy var downBtn: UIButton = {
         let btn = UIButton()
         btn.layer.cornerRadius = 20
-        btn.setTitle("下", for: .normal)
+        btn.setImage(UIImage(named: "down"), for: .normal)
         btn.setTitleColor(.black, for: .normal)
         btn.addTarget(self, action: #selector(downBtnClick), for: .touchUpInside)
-        btn.backgroundColor = colorRGB(red: 189, green: 214, blue: 255, alpha: 1)
+        //btn.backgroundColor = colorRGB(red: 189, green: 214, blue: 255, alpha: 1)
         return btn
     }()
     
     lazy var rotateBtn: UIButton = {
         let btn = UIButton()
         btn.layer.cornerRadius = 20
-        btn.setTitle("旋转", for: .normal)
+        btn.setImage(UIImage(named: "rotate"), for: .normal)
         btn.setTitleColor(.black, for: .normal)
         btn.addTarget(self, action: #selector(rotateBtnClick), for: .touchUpInside)
-        btn.backgroundColor = colorRGB(red: 189, green: 214, blue: 255, alpha: 1)
+        //btn.backgroundColor = colorRGB(red: 189, green: 214, blue: 255, alpha: 1)
+        return btn
+    }()
+    
+    lazy var speedUpBtn: UIButton = {
+        let btn = UIButton()
+        btn.layer.cornerRadius = 20
+        btn.setImage(UIImage(named: "speedup"), for: .normal)
+        btn.setTitleColor(.black, for: .normal)
+        btn.addTarget(self, action: #selector(speedUpBtnClick), for: .touchUpInside)
+        //btn.backgroundColor = colorRGB(red: 189, green: 214, blue: 255, alpha: 1)
+        return btn
+    }()
+    
+    lazy var restartBtn: UIButton = {
+        let btn = UIButton()
+        btn.layer.cornerRadius = 20
+        btn.setImage(UIImage(named: "restart"), for: .normal)
+        btn.setTitleColor(.black, for: .normal)
+        btn.addTarget(self, action: #selector(restartBtnClick), for: .touchUpInside)
+        //btn.backgroundColor = colorRGB(red: 189, green: 214, blue: 255, alpha: 1)
+        return btn
+    }()
+    
+    lazy var stopBtn: UIButton = {
+        let btn = UIButton()
+        btn.layer.cornerRadius = 20
+        btn.setImage(UIImage(named: "stop"), for: .normal)
+        btn.setImage(UIImage(named: "start"), for: .selected)
+        btn.setTitleColor(.black, for: .normal)
+        btn.addTarget(self, action: #selector(stopBtnClick(sender:)), for: .touchUpInside)
+        //btn.backgroundColor = colorRGB(red: 189, green: 214, blue: 255, alpha: 1)
         return btn
     }()
 
@@ -98,7 +130,13 @@ extension ViewController: TetrisDelegate {
     }
     
     func gameFail() {
-        
+        //显示提示框
+        let alert = UIAlertController(title: "游戏结束", message: "点击重新开始", preferredStyle:UIAlertController.Style.alert )
+        let done = UIAlertAction(title: "重新开始", style: UIAlertAction.Style.default, handler: { (UIAlertAction) -> Void in
+            self.tetrisViewManager.startGame()
+        })
+        alert.addAction(done)
+        self.present(alert, animated: false, completion: nil)
     }
     
     
@@ -108,11 +146,11 @@ extension ViewController: TetrisDelegate {
 extension ViewController {
     //按钮点击事件
     @objc func leftBtnClick() {
-        self.tetrisViewManager.moveLeft()
+        self.tetrisViewManager.blockMoveLeft()
     }
     
     @objc func rightBtnClick() {
-        self.tetrisViewManager.moveRight()
+        self.tetrisViewManager.blockMoveRight()
     }
     
     @objc func downBtnClick() {
@@ -121,6 +159,22 @@ extension ViewController {
     
     @objc func rotateBtnClick() {
         self.tetrisViewManager.blockRotate()
+    }
+    @objc func speedUpBtnClick() {
+        self.tetrisViewManager.speedUp()
+    }
+    @objc func stopBtnClick(sender: UIButton) {
+        if sender.isSelected {
+            sender.isSelected = false
+            self.tetrisViewManager.continueGame()
+        } else {
+            sender.isSelected = true
+            self.tetrisViewManager.stopGame()
+        }
+    }
+    
+    @objc func restartBtnClick() {
+        self.tetrisViewManager.startGame()
     }
 }
 //MARK: - UI
@@ -133,6 +187,9 @@ extension ViewController {
         self.view.addSubview(self.leftBtn)
         self.view.addSubview(self.downBtn)
         self.view.addSubview(self.rotateBtn)
+        self.view.addSubview(self.restartBtn)
+        self.view.addSubview(self.stopBtn)
+        self.view.addSubview(self.speedUpBtn)
         
         prepareScoreLabel()
         prepareSpeedLabel()
@@ -141,7 +198,35 @@ extension ViewController {
         prepareLeftBtn()
         prepareDownBtn()
         prepareRotateBtn()
+        prepareRestartBtn()
+        prepareStopBtn()
+        prepareSpeedUpBtn()
     }
+    func prepareSpeedUpBtn() {
+        self.speedUpBtn.snp.makeConstraints { make in
+            make.centerX.equalTo(self.rightBtn.snp.centerX)
+            make.centerY.equalTo(self.restartBtn.snp.centerY)
+            make.height.equalTo(self.restartBtn.snp.width)
+            make.width.equalTo(self.restartBtn.snp.width)
+        }
+    }
+    func prepareStopBtn() {
+        self.stopBtn.snp.makeConstraints { make in
+            make.centerY.equalTo(self.restartBtn.snp.centerY)
+            make.centerX.equalTo(self.rotateBtn.snp.centerX)
+            make.height.equalTo(self.restartBtn.snp.width)
+            make.width.equalTo(self.restartBtn.snp.width)
+        }
+    }
+    func prepareRestartBtn() {
+        self.restartBtn.snp.makeConstraints { make in
+            make.centerX.equalTo(self.downBtn.snp.centerX)
+            make.top.equalTo(self.rotateBtn.snp.bottom).offset(2 * SPACE)
+            make.height.equalTo(self.rightBtn.snp.width).multipliedBy(0.8)
+            make.width.equalTo(self.rightBtn.snp.width).multipliedBy(0.8)
+        }
+    }
+    
     func prepareRotateBtn() {
         self.rotateBtn.snp.makeConstraints { make in
             make.left.equalTo(self.downBtn.snp.right).offset(SPACE)

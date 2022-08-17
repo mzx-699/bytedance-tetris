@@ -19,10 +19,8 @@ class TetrisViewManager {
     // 速度
     var speed = 1
     
-
-    
     //当前的计时器
-    var currentTimer: Timer!
+    var currentTimer: Timer?
     
     // 消除音乐
     var displayer: AVAudioPlayer = {
@@ -36,18 +34,36 @@ class TetrisViewManager {
         self.tetrisView = tv
     }
 }
-
+//MARK: - game control
+extension TetrisViewManager {
+    func stopGame() {
+        self.currentTimer?.invalidate()
+    }
+    func continueGame() {
+        self.currentTimer?.invalidate()
+        self.currentTimer = Timer.scheduledTimer(timeInterval: 0.6 / Double(self.speed), target: self, selector: #selector(down), userInfo: nil, repeats: true)
+    }
+    
+    func speedUp() {
+        self.speed += 1
+        self.currentTimer?.invalidate()
+        self.currentTimer = Timer.scheduledTimer(timeInterval: 0.6 / Double(self.speed), target: self, selector: #selector(down), userInfo: nil, repeats: true)
+        self.delegate?.updateSpeed(speed: self.speed)
+    }
+}
 //MARK: - 控制动作
 extension TetrisViewManager {
     
     
     func startGame () {
+        
         self.speed = 1
         self.delegate?.updateSpeed(speed: self.speed)
         self.score = 0
         self.delegate?.updateScore(score: self.score)
         self.tetrisView.initTetrisStatus()
         self.tetrisView.initBlock()
+        self.currentTimer?.invalidate()
         self.currentTimer = Timer.scheduledTimer(timeInterval: 0.6 / Double(self.speed), target: self, selector: #selector(blockMoveDown), userInfo: nil, repeats: true)
    }
     /**
@@ -77,7 +93,7 @@ extension TetrisViewManager {
                     self.speed += 1
                     self.delegate?.updateSpeed(speed: self.speed)
                     //让原有计时器失效，开始新的计时器
-                    self.currentTimer.invalidate()
+                    self.currentTimer?.invalidate()
                     self.currentTimer = Timer.scheduledTimer(timeInterval: 0.6 / Double(self.speed), target: self, selector: #selector(down), userInfo: nil, repeats: true)
                 }
                 //把当前行上边的所有方块下移一行
@@ -102,15 +118,13 @@ extension TetrisViewManager {
         for i in 0  ..< self.tetrisView.currentBlock.count {
             
             //判断是否已经到底了
-            if self.tetrisView.currentBlock[i].y >= ROW_COUNT - 1
-            {
+            if self.tetrisView.currentBlock[i].y >= ROW_COUNT - 1 {
                 canDown = false
                 break
             }
             
             //判断下一个是不是有方块
-            if self.tetrisView.tetrisStatus[self.tetrisView.currentBlock[i].y + 1][self.tetrisView.currentBlock[i].x] != NO_BLOCK_STATUS
-            {
+            if self.tetrisView.tetrisStatus[self.tetrisView.currentBlock[i].y + 1][self.tetrisView.currentBlock[i].x] != NO_BLOCK_STATUS {
                 canDown = false
                 break
             }
@@ -151,17 +165,8 @@ extension TetrisViewManager {
                 let cur = self.tetrisView.currentBlock[i]
                 //如果有方块在最上边了，表明已经输了
                 if cur.y < 2 {
-                    currentTimer.invalidate()
-                    delegate?.gameFail()
-                    //显示提示框
-                    let alert = UIAlertController(title: "游戏结束", message: "游戏已经结束，点击重新开始", preferredStyle:UIAlertController.Style.alert )
-                    
-                    let yeslAction = UIAlertAction(title: "重新开始", style: UIAlertAction.Style.default, handler: { (UIAlertAction) -> Void in
-                        self.startGame()
-                    })
-                    
-                    alert.addAction(yeslAction)
-                    UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
+                    self.currentTimer?.invalidate()
+                    self.delegate?.gameFail()
                     return
                     
                 }
@@ -173,9 +178,9 @@ extension TetrisViewManager {
             lineFull()
             
             //开始新一组方块
-            tetrisView.initBlock()
+            self.tetrisView.initBlock()
         }
-        tetrisView.updateImage()
+        self.tetrisView.updateImage()
     }
 }
 
@@ -240,18 +245,8 @@ extension TetrisViewManager {
                 let cur = self.tetrisView.currentBlock[i]
                 //如果有方块在最上边了，表明已经输了
                 if cur.y < 2 {
-                    currentTimer.invalidate()
+                    self.currentTimer?.invalidate()
                     delegate?.gameFail()
-                    //显示提示框
-                    let alert = UIAlertController(title: "游戏结束", message: "游戏已经结束，点击重新开始", preferredStyle:UIAlertController.Style.alert )
-                    
-                    let yeslAction = UIAlertAction(title: "重新开始", style: UIAlertAction.Style.default, handler: { (UIAlertAction) -> Void in
-                        self.startGame()
-                    })
-                    
-                    alert.addAction(yeslAction)
-                    UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
-                    
                     return
                     
                 }
@@ -268,7 +263,7 @@ extension TetrisViewManager {
         self.tetrisView.updateImage()
     }
     // 方块向左移动
-    func moveLeft() {
+    func blockMoveLeft() {
         
         //定义能否左移
         var canLeft = true
@@ -320,7 +315,7 @@ extension TetrisViewManager {
     
     
     //方块右移的方法
-    func moveRight() {
+    func blockMoveRight() {
         //定义能否右移
         var canRight = true
         for i in 0  ..< self.tetrisView.currentBlock.count {
@@ -388,8 +383,10 @@ extension TetrisViewManager {
             }
         }
         if canRotate {
+            if (self.tetrisView.currentBlock[0].color == 3) {return}
             for i in 0  ..< self.tetrisView.currentBlock.count {
                 let cur = self.tetrisView.currentBlock[i]
+                
                 self.tetrisView.updateCtx(rect: CGRect(x: CGFloat(cur.x * self.tetrisView.cellSize + 1.0),
                                                        y: CGFloat(cur.y * self.tetrisView.cellSize + 1.0),
                                                        width: CGFloat(self.tetrisView.cellSize - 1.0 * 2),
@@ -410,6 +407,7 @@ extension TetrisViewManager {
             
             for i in 0  ..< self.tetrisView.currentBlock.count {
                 let cur = self.tetrisView.currentBlock[i]
+                
                 self.tetrisView.updateCtx(rect: CGRect(x: CGFloat(cur.x * self.tetrisView.cellSize + 1.0),
                                                        y: CGFloat(cur.y * self.tetrisView.cellSize + 1.0),
                                                        width: CGFloat(self.tetrisView.cellSize - 1.0 * 2),
