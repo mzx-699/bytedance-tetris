@@ -88,8 +88,7 @@ func colorRGB(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) -> UI
     return UIColor(red: red / 256, green: green / 256, blue: blue / 256, alpha: alpha)
 }
 
-//MARK: - 重载运算符
-// 重载运算符 支持Int + Double运算
+//MARK: - 重载运算符 支持Int + Double运算
 func + (left: Int , right:Double) -> Double
 {
     return Double(left) + right

@@ -54,7 +54,7 @@ extension TetrisViewManager {
 //MARK: - 控制动作
 extension TetrisViewManager {
     
-    
+    // 开始游戏
     func startGame () {
         
         self.speed = 1
@@ -64,12 +64,12 @@ extension TetrisViewManager {
         self.tetrisView.initTetrisStatus()
         self.tetrisView.initBlock()
         self.currentTimer?.invalidate()
-        self.currentTimer = Timer.scheduledTimer(timeInterval: 0.6 / Double(self.speed), target: self, selector: #selector(blockMoveDown), userInfo: nil, repeats: true)
+        self.currentTimer = Timer.scheduledTimer(timeInterval: 1.0 / Double(self.speed), target: self, selector: #selector(blockMoveDown), userInfo: nil, repeats: true)
    }
     /**
      判断是否有一行已满
      */
-    func lineFull() {
+    func lineIsFull() {
         //依次便利每一行
         for i in 0  ..< ROW_COUNT {
             var flag = true
@@ -82,7 +82,7 @@ extension TetrisViewManager {
             }
             //如果当前有全部方块了
             if flag {
-                //将当前积分增加100
+                // 加分
                 self.score += 100
                 
                 self.delegate?.updateScore(score: score)
@@ -160,7 +160,7 @@ extension TetrisViewManager {
             }
         } else { // 不能下落
             
-            //遍历每个方块，把每个方块的值记录到tetris_status数组中
+            //遍历每个方块，更新tetrisStatus
             for i in 0  ..< self.tetrisView.currentBlock.count {
                 let cur = self.tetrisView.currentBlock[i]
                 //如果有方块在最上边了，表明已经输了
@@ -175,7 +175,7 @@ extension TetrisViewManager {
                 
             }
             //判断是不是可消除
-            lineFull()
+            lineIsFull()
             
             //开始新一组方块
             self.tetrisView.initBlock()
@@ -209,9 +209,8 @@ extension TetrisViewManager {
         }
         
         if canDown {
-            
             tetrisView.drawblock()
-            //将下移前的方块白色
+        
             for i in 0  ..< self.tetrisView.currentBlock.count {
                 
                 let cur = self.tetrisView.currentBlock[i]
@@ -240,7 +239,7 @@ extension TetrisViewManager {
         //不能下落
         else {
             
-            //遍历每个方块，把每个方块的值记录到tetris_status数组中
+            //遍历每个方块，更新tetrisStatus
             for i in 0  ..< self.tetrisView.currentBlock.count {
                 let cur = self.tetrisView.currentBlock[i]
                 //如果有方块在最上边了，表明已经输了
@@ -255,7 +254,7 @@ extension TetrisViewManager {
                 
             }
             //判断是不是可消除
-            lineFull()
+            lineIsFull()
             
             //开始新一组方块
             self.tetrisView.initBlock()

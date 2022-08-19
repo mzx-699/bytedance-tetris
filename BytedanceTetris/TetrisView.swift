@@ -57,7 +57,7 @@ class TetrisView: UIView {
     override func draw(_ rect: CGRect) {
         // 获取绘图上下文
         _ = UIGraphicsGetCurrentContext()
-        // 将内存中的image图片绘制在该组件的左上角
+        // 将image图片绘制在该组件的左上角
         self.image.draw(at: .zero)
         
     }
