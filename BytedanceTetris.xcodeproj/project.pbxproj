@@ -14,7 +14,7 @@
 		730312BF28A29C3800548F2F /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730312BE28A29C3800548F2F /* Block.swift */; };
 		730312C928A2A37700548F2F /* TetrisViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730312C828A2A37700548F2F /* TetrisViewManager.swift */; };
 		7384E6AC289CB0FD004FD81B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384E6AB289CB0FD004FD81B /* AppDelegate.swift */; };
-		7384E6B0289CB0FD004FD81B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384E6AF289CB0FD004FD81B /* ViewController.swift */; };
+		7384E6B0289CB0FD004FD81B /* TetrisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384E6AF289CB0FD004FD81B /* TetrisViewController.swift */; };
 		7384E6B5289CB105004FD81B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7384E6B4289CB105004FD81B /* Assets.xcassets */; };
 		7384E6B8289CB105004FD81B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7384E6B6289CB105004FD81B /* LaunchScreen.storyboard */; };
 		7384E6C3289CB105004FD81B /* BytedanceTetrisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384E6C2289CB105004FD81B /* BytedanceTetrisTests.swift */; };
@@ -54,7 +54,7 @@
 		730312C828A2A37700548F2F /* TetrisViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetrisViewManager.swift; sourceTree = "<group>"; };
 		7384E6A8289CB0FD004FD81B /* BytedanceTetris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BytedanceTetris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7384E6AB289CB0FD004FD81B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7384E6AF289CB0FD004FD81B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7384E6AF289CB0FD004FD81B /* TetrisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetrisViewController.swift; sourceTree = "<group>"; };
 		7384E6B4289CB105004FD81B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7384E6B7289CB105004FD81B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7384E6B9289CB105004FD81B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 				7384E6B6289CB105004FD81B /* LaunchScreen.storyboard */,
 				730312C228A29FEF00548F2F /* sources */,
 				7384E6AB289CB0FD004FD81B /* AppDelegate.swift */,
-				7384E6AF289CB0FD004FD81B /* ViewController.swift */,
+				7384E6AF289CB0FD004FD81B /* TetrisViewController.swift */,
 				730312BC28A29B1500548F2F /* TetrisView.swift */,
 				730312C828A2A37700548F2F /* TetrisViewManager.swift */,
 				730312B828A29ABA00548F2F /* TetrisDelegate.swift */,
@@ -428,7 +428,7 @@
 			files = (
 				730312C928A2A37700548F2F /* TetrisViewManager.swift in Sources */,
 				730312BB28A29AEA00548F2F /* Common.swift in Sources */,
-				7384E6B0289CB0FD004FD81B /* ViewController.swift in Sources */,
+				7384E6B0289CB0FD004FD81B /* TetrisViewController.swift in Sources */,
 				7384E6AC289CB0FD004FD81B /* AppDelegate.swift in Sources */,
 				730312BF28A29C3800548F2F /* Block.swift in Sources */,
 				730312B928A29ABA00548F2F /* TetrisDelegate.swift in Sources */,

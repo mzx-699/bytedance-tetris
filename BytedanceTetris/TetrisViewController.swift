@@ -9,7 +9,7 @@ import UIKit
 import AVFoundation
 import SnapKit
 import SVProgressHUD
-class ViewController: UIViewController {
+class TetrisViewController: UIViewController {
 
     
     var speedLabel : UILabel = {
@@ -120,7 +120,7 @@ class ViewController: UIViewController {
 }
 
 //MARK: - TetrisDelegate
-extension ViewController: TetrisDelegate {
+extension TetrisViewController: TetrisDelegate {
     func updateScore(score: Int) {
         self.scoreLabel.text = "当前分数: " + String(score)
     }
@@ -143,7 +143,7 @@ extension ViewController: TetrisDelegate {
 }
 
 //MARK: - btn click
-extension ViewController {
+extension TetrisViewController {
     //按钮点击事件
     @objc func leftBtnClick() {
         self.tetrisViewManager.blockMoveLeft()
@@ -168,6 +168,7 @@ extension ViewController {
             sender.isSelected = false
             self.tetrisViewManager.continueGame()
         } else {
+            
             sender.isSelected = true
             self.tetrisViewManager.stopGame()
         }
@@ -178,7 +179,7 @@ extension ViewController {
     }
 }
 //MARK: - UI
-extension ViewController {
+extension TetrisViewController {
     func setupUI() {
         self.view.addSubview(self.speedLabel)
         self.view.addSubview(self.scoreLabel)
