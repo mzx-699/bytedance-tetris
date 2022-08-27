@@ -3,14 +3,6 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "TetrisView.init(frame:):TetrisView.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.bounds.size">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "TetrisView.layoutSubviews():TetrisView.swift">
          <PersistentStrings>
             <PersistentString
@@ -24,6 +16,52 @@
             </PersistentString>
             <PersistentString
                value = "Int(SCREEN_WIDTH) - 2 * SPACE">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TetrisView.init(frame:):TetrisView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.bounds.size">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TetrisView.drawblock():TetrisView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.tetrisStatus[i][j]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TetrisViewManager.startGame():TetrisViewManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.currentBlock">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TetrisViewManager.blockRotate():TetrisViewManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.tetrisView.currentBlock">
+            </PersistentString>
+            <PersistentString
+               value = "self.tetrisView.currentBlock[2].y + self.tetrisView.currentBlock[2].x - preX">
+            </PersistentString>
+            <PersistentString
+               value = "self.tetrisView.currentBlock[2].x + preY - self.tetrisView.currentBlock[2].y">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in ViewController.prepareTetrisView():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view.snp.width">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -44,30 +82,6 @@
             </PersistentString>
             <PersistentString
                value = "cellSize">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "TetrisViewManager.startGame():TetrisViewManager.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.currentBlock">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in ViewController.prepareTetrisView():ViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.view.snp.width">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "TetrisView.drawblock():TetrisView.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.tetrisStatus[i][j]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

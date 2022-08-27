@@ -187,13 +187,21 @@ extension TetrisViewManager {
 
 //MARK: - move
 extension TetrisViewManager {
+    /**
+     1. 判断是否能移动
+     2.1 能移动，原位置画成白色；方块往下移动，画成方块色
+     2.2 不能移动，y小于2，游戏结束；将方格的类型设置给tetrisStatus
+     3. 判断是否可以消除，遍历每一行
+     4. 重新绘制，draw
+     */
     
     // 往下
     @objc func down() {
-        //定义向下的旗标
+        //定义向下的标志
         var canDown = true
 
-        //判断当前的的滑块是不是可以下滑
+        // 判断当前的滑块是不是可以下滑
+        // 遍历当前的方块
         for i in 0  ..< self.tetrisView.currentBlock.count {
             //判断是否已经到底了
             if self.tetrisView.currentBlock[i].y >= ROW_COUNT - 1 {
@@ -201,7 +209,7 @@ extension TetrisViewManager {
                 break
             }
             
-            //判断下一个是不是有方块
+            //判断下一个是不是有方块，y行
             if self.tetrisView.tetrisStatus[self.tetrisView.currentBlock[i].y + 1][self.tetrisView.currentBlock[i].x] != NO_BLOCK_STATUS {
                 canDown = false
                 break
@@ -209,10 +217,11 @@ extension TetrisViewManager {
         }
         
         if canDown {
+            // 往下画
             tetrisView.drawblock()
         
             for i in 0  ..< self.tetrisView.currentBlock.count {
-                
+                // 上面的画白
                 let cur = self.tetrisView.currentBlock[i]
                 tetrisView.updateCtx(rect: CGRect(x: CGFloat(cur.x * self.tetrisView.cellSize + 1.0) ,
                                                        y: CGFloat(cur.y * self.tetrisView.cellSize + 1.0),
@@ -373,7 +382,7 @@ extension TetrisViewManager {
                 //计算旋转后的坐标
                 let afterRotateX = self.tetrisView.currentBlock[2].x + preY - self.tetrisView.currentBlock[2].y
                 let afterRotateY = self.tetrisView.currentBlock[2].y + self.tetrisView.currentBlock[2].x - preX
-                //如果旋转后的x。y越界或者旋转后的位置已有方块，表明不能旋转
+                // 如果旋转后的x/y越界或者旋转后的位置已有方块，表明不能旋转
                 if afterRotateX < 0 || afterRotateX > COLUMN_COUNT - 1 || afterRotateY < 0 || afterRotateY > ROW_COUNT - 1||self.tetrisView.tetrisStatus[afterRotateY][afterRotateX] != NO_BLOCK_STATUS
                 {
                     canRotate = false
@@ -382,7 +391,9 @@ extension TetrisViewManager {
             }
         }
         if canRotate {
+            //正方形跳过
             if (self.tetrisView.currentBlock[0].color == 3) {return}
+            //原位置绘制成白色
             for i in 0  ..< self.tetrisView.currentBlock.count {
                 let cur = self.tetrisView.currentBlock[i]
                 
@@ -392,18 +403,20 @@ extension TetrisViewManager {
                                                        height: CGFloat(self.tetrisView.cellSize - 1.0 * 2)),
                                                         color: UIColor.white.cgColor)
             }
-            
+            // 开始旋转
             for i in 0  ..< self.tetrisView.currentBlock.count {
+                //暂存下标
                 let preX = self.tetrisView.currentBlock[i].x
                 let preY = self.tetrisView.currentBlock[i].y
-                
+                // 围绕中心点进行逆时针旋转90度
+                // x=x2+(y-y2) y=y2-(x-x2)
                 if i != 2 {
                     self.tetrisView.currentBlock[i].x = self.tetrisView.currentBlock[2].x + preY - self.tetrisView.currentBlock[2].y
                     self.tetrisView.currentBlock[i].y = self.tetrisView.currentBlock[2].y + self.tetrisView.currentBlock[2].x - preX
                 }
                 
             }
-            
+            // 绘制颜色
             for i in 0  ..< self.tetrisView.currentBlock.count {
                 let cur = self.tetrisView.currentBlock[i]
                 

@@ -53,9 +53,9 @@ class TetrisView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
-    
+    // setNeedsDisplay时会被触发
     override func draw(_ rect: CGRect) {
-        // 获取绘图上下文
+        // 获取绘图上下文，才能绘制
         _ = UIGraphicsGetCurrentContext()
         // 将image图片绘制在该组件的左上角
         self.image.draw(at: .zero)
@@ -85,7 +85,7 @@ extension TetrisView {
         // 设置笔触颜色
         self.ctx.setStrokeColor(UIColor(red: 0.9,
                                    green: 0.9, blue: 0.9, alpha: 1).cgColor)
-        // 设置线条粗细
+        // 设置线条粗细 线粗1.0
         self.ctx.setLineWidth(CGFloat(1.0))
         // 绘制线条
         self.ctx.strokePath()
@@ -128,6 +128,7 @@ extension TetrisView {
     func updateImage() {
         // 获取缓冲区的图片
         self.image = UIGraphicsGetImageFromCurrentImageContext()
+        // 刷新视图
         self.setNeedsDisplay()
     }
 }
